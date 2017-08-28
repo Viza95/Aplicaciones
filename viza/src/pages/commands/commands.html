@@ -1,0 +1,34 @@
+<!--
+  Generated template for the CommandsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comandos</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        Satatus: 
+        <ion-icon name="ios-checkmark" color="primary"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label fixed>Comando</ion-label>
+    <ion-input type="text" value="" [(ngModel)]="commands"></ion-input>
+  </ion-item>
+
+  <button ion-button color="primary" (click)="sendData()" block>Enviar</button>
+  <ion-scroll scrollY="true" style="height: 84%">
+   <ion-list>
+     <ion-item *ngFor="let command of historyCommands">
+       <p>{{command}}</p>
+     </ion-item>
+   </ion-list>
+  </ion-scroll>
+</ion-content>

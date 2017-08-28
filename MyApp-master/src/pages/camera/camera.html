@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>camera</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<button ion-button (click)="openCamera()" block>
+  <ion-icon name="camera"></ion-icon>
+    Abrir Camara
+</button>
+
+ <ion-card *ngFor="let picture of dataPictures | async"> 
+    <img [src]="picture.url"/>
+    <div class="card-title">{{picture.title}}</div>
+    <div class="card-subtitle">{{picture.subtitle}}</div>
+  </ion-card>
+
+
+</ion-content>

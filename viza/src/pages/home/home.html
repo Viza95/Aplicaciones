@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="primary" (click)="discoverUnpairedDevices()">
+        Buscar
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item-group>
+    <ion-item-divider color="light">Dispositivos vinculados</ion-item-divider>
+    <button ion-item *ngFor="let PairDevice of pairdevices" (click)="connectToDevice(PairDevice.address)">
+        <h2>{{PairDevice.name}}</h2>
+        <p>{{PairDevice.address}}</p>
+      </button>
+  </ion-item-group>
+
+  <ion-item-group *ngIf="unpaireds">
+    <ion-item-divider color="light">Dispositivos econtradados</ion-item-divider>
+    <button ion-item *ngFor="let UnpairDevice of unpairdevices" (click)="connectToDevice(UnpairDevice.address)">
+      <h2>{{UnpairDevice.name}}</h2>
+      <p>{{UnpairDevice.address}}</p>
+    </button>
+  </ion-item-group>
+
+</ion-content>

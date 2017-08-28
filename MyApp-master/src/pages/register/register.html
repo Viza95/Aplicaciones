@@ -1,0 +1,20 @@
+<ion-content padding>
+  <div class="login-section">
+
+    <form [(formGroup)]="registerData" (ngSubmit)="registerForm()" #loginForm="ngForm" id="register-form">
+      <ion-list>
+
+        <ion-item>
+          <ion-input formControlName="registerMail" type="text" placeholder="Email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input formControlName="registerPass" type="password" placeholder="Password"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </form>
+
+    <button ion-button block (click)="register()" form="register-from" id="register-form">Register</button>
+  </div>
+</ion-content>

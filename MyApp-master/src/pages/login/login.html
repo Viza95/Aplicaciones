@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pagina de Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="login-section">
+    <div class="logo">
+      <img src="assets/images/science.png">
+    </div>
+
+    <form [(formGroup)]="data"  #loginForm="ngForm" id="login-form">
+      <ion-list inset>
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input formControlName="username" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+    </form>
+    <button ion-button block (click)="login()" form="login-from" id="login-form">Login</button>
+    <button ion-button block (click)="FBlogin()" form="login-from" id="login-form">Facebook login</button>
+    <div margin-top>
+      <a float-left href="#" (click)="register()">Crear cuenta </a>
+      <a float-right href="#" (click)="resetPassword()">Recuperar contraseña </a>
+    </div>
+  </div>
+</ion-content>

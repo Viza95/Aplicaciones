@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>scanner</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button block (click)="launchScanner()">Scanner</button>
+
+  <ion-list *ngFor="let data of data" >
+      <ion-item>{{data.text}}</ion-item>
+      <ion-item>{{data.format}}</ion-item>
+  </ion-list>
+</ion-content>

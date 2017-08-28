@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [(formGroup)]="exampleFormData" #exampleForm="ngForm" id="example-form">
+    <ion-item>
+      <ion-label fixed>Nombre Completo</ion-label>
+      <ion-input formControlName="name" type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Genero</ion-label>
+      <ion-select formControlName="gender">
+        <ion-option value="f">Female</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Comida Favorita</ion-label>
+      <ion-select formControlName="hobby">
+        <ion-option value="z">Pizza</ion-option>
+        <ion-option value="P">Hot-Dog</ion-option>
+        <ion-option value="h">Hamburguesa</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button block (click)="save()" form="example-from" id="example-form">Gurdar</button>
+  </form>
+
+  <ion-list>
+    <ion-item-sliding *ngFor=" let record of records | async">
+      <button ion-item>
+      <ion-avatar item-start>
+        <img src="img/avatar-finn.png">
+      </ion-avatar>
+      <h2>{{record.name}}</h2>
+      <h3>{{record.gender}}</h3>
+      <p>{{record.hobby}}</p>
+    </button>
+      <ion-item-options side="left">
+        <button (click)="edit(record.$key)" ion-button color="primary">
+          <ion-icon name="create"></ion-icon>
+          Editar
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button (click)="delete(record.$key, record.name)"  ion-button color="secondary">
+          <ion-icon name="trash"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
